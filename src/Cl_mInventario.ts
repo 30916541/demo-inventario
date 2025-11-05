@@ -7,12 +7,12 @@ export default class Cl_mInventario {
         dispositivo,
         callback,
     }: {
-        articulo: Cl_mDispositivo;
+        dispositivo: Cl_mDispositivo;
         callback: (error: string | false) => void;
     }): void {
 
         const id = this.dispositivos.find(
-            (d) => d.id === articulo.id
+            (d) => d.id === dispositivo.id
         );
         if (id) {
             callback("El ID ya existe");
@@ -20,14 +20,14 @@ export default class Cl_mInventario {
         }
 
         const serial = this.dispositivos.find(
-            (d) => d.serial === articulo.serial
+            (d) => d.serial === dispositivo.serial
         );
         if (serial) {
             callback("El serial ya existe");
             return;
         }
 
-        this.dispositivos.push(articulo);
+        this.dispositivos.push(dispositivo);
         callback(false);
     }
 
