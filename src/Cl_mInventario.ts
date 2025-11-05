@@ -4,7 +4,7 @@ export default class Cl_mInventario {
     private dispositivos: Cl_mDispositivo[] = [];
 
     agregarDispositivo({
-        articulo,
+        dispositivo,
         callback,
     }: {
         articulo: Cl_mDispositivo;
