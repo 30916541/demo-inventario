@@ -19,7 +19,7 @@ export default class Cl_controlador {
         callback: Function;
     }): void {
         this.modelo.agregarDispositivo({
-            articulo: new Cl_mDispositivo({
+            dispositivo: new Cl_mDispositivo({
                 ...dispositivoData,
                 modelo: dispositivoData.modelo ?? "",
             }),
