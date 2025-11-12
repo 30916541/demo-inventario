@@ -36,7 +36,7 @@ export default class Cl_mDispositivo {
         return this._marca;
     }
     set modelo(modelo) {
-        this._modelo = modelo ? modelo.trim().toLocaleUpperCase() : null;
+        this._modelo = modelo.trim().toLocaleUpperCase();
     }
     get modelo() {
         return this._modelo;

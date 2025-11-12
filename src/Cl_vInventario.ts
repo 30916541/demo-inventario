@@ -18,7 +18,7 @@ export default class Cl_vInventario extends Cl_vGeneral {
 
     mostrarDispositivosRegistrados() {
         this.divDispositivosRegistrados.innerHTML = "";
-        let dispositivos = this.controlador?.listarDispositivos();
+        let dispositivos = this.controlador?.dispositivosRegistrados();
         if (!dispositivos) return;
         dispositivos.forEach((dispositivos: iDispositivo) => {
             this.divDispositivosRegistrados.innerHTML += `<tr>
@@ -26,7 +26,7 @@ export default class Cl_vInventario extends Cl_vGeneral {
                 <td>${dispositivos.tipo.toLocaleUpperCase()}</td>
                 <td>${dispositivos.serial.toLocaleUpperCase()}</td>
                 <td>${dispositivos.marca.toLocaleUpperCase()}</td>
-                <td>${dispositivos.modelo? dispositivos.modelo.toLocaleUpperCase() : ""}</td>
+                <td>${dispositivos.modelo.toLocaleUpperCase()}</td>
             </tr>`;
         });
     }
@@ -41,13 +41,14 @@ export default class Cl_vInventario extends Cl_vGeneral {
         let marca = prompt("Ingrese la marca del dispositivo:");
         if (!marca) return;
         let modelo = prompt("Ingrese el modelo del dispositivo (opcional):");
+        if (!modelo) return;
         this.controlador!.agregarDispositivo({
             dispositivoData: {
                 id: id,
                 tipo: tipo,
                 serial: serial,
                 marca: marca,
-                modelo: modelo ? modelo : null,
+                modelo: modelo,
             },
             callback: (error: string | false) => {
                 if (error) alert(error);

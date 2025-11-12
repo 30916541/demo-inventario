@@ -3,7 +3,7 @@ export interface iDispositivo {
     tipo: string;
     serial: string;
     marca: string;
-    modelo: string | null;
+    modelo: string;
 }
 
 export default class Cl_mDispositivo {
@@ -11,7 +11,7 @@ export default class Cl_mDispositivo {
     private _tipo: string = "";
     private _serial: string = "";
     private _marca: string = "";
-    private _modelo: string | null = "";
+    private _modelo: string = "";
 
     constructor({
         id,
@@ -65,11 +65,11 @@ export default class Cl_mDispositivo {
         return this._marca;
     }
 
-    set modelo(modelo: string | null) {
-        this._modelo = modelo ? modelo.trim().toLocaleUpperCase() : null;
+    set modelo(modelo: string) {
+        this._modelo = modelo.trim().toLocaleUpperCase();
     }
 
-    get modelo(): string | null {
+    get modelo(): string {
         return this._modelo;
     }
 

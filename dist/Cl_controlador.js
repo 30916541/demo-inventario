@@ -8,16 +8,13 @@ export default class Cl_controlador {
     }
     agregarDispositivo({ dispositivoData, callback, }) {
         this.modelo.agregarDispositivo({
-            dispositivo: new Cl_mDispositivo({
-                ...dispositivoData,
-                modelo: dispositivoData.modelo ?? "",
-            }),
+            dispositivo: new Cl_mDispositivo(dispositivoData),
             callback: (error) => {
                 callback(error);
             },
         });
     }
-    listarDispositivos() {
-        return this.modelo.listarDispositivos();
+    dispositivosRegistrados() {
+        return this.modelo.listarInventario();
     }
 }
