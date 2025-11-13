@@ -1,86 +1,91 @@
-section {
-    border: 3px solid rgb(0, 0, 0);
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    width: 300px;
+/* Estilos básicos y minimalistas para la aplicación de inventario */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-label {
-    margin-top: 5px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
 }
 
+/* Títulos */
 h3 {
-    color: white;
-    background-color: rgb(0, 0, 0);
-    padding: 3px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-h4 {
-    margin-top: 1px;
-    margin-bottom: 0px;
-    font-style: italic;
+    color: #222;
+    margin-bottom: 20px;
+    font-size: 18px;
     font-weight: normal;
-    color: seagreen;
 }
 
+/* Sección principal */
+section {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Botón */
 button {
-    margin-top: 10px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #222;
 }
 
-input {
-    width: 80px;
+button:hover {
+    background-color: #222;
 }
 
-table,
-th,
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+thead {
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #ddd;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    font-weight: normal;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
 td {
-    border: 1px solid black;
-    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
 }
 
-#agenda {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+/* Filas alternadas para mejor visualización */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-#ficha {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-top: 10px;
+tbody tr:nth-child(odd) {
+    background-color: #fff;
 }
 
-#mainForm {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
+tbody tr:hover {
+    background-color: #f0f0f0;
 }
 
-.colCurrency {
-    text-align: right;
-    padding-left: 10px;
+/* Estilos para elementos dinámicos */
+#inventario_divDispositivosRegistrados td {
+    color: #333;
 }
 
-.colNumber {
-    column-width: 50px;
-}
-
-.divSalida {
-    display: flex;
-    flex-direction: column;
-}
-
-.spanInfo {
-    font-size: 10px;
-    font-style: italic;
-    color: rgb(0, 0, 0);
-}
